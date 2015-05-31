@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect(process.env.MONGOLAB_URI);
+mongoose.connect('mongodb://localhost/webmongo');
 
 var Product = mongoose.model('Product', {
   class: String, // Bases de dades, dominis... etc.
