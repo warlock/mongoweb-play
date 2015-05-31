@@ -1,5 +1,12 @@
 var mongoose = require('mongoose');
-mongoose.connect(process.env.MONGOLAB_URI);
+
+if (process.env.NODE_ENV === 'development') {
+	var dbURI = 'mongodb://localhost/test';
+} else {
+	var dbURI = process.env.MONGOLAB_URI;
+}
+
+mongoose.connect(dbURI);
 
 var Product = mongoose.model('Product', {
   class: String, // Bases de dades, dominis... etc.
