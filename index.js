@@ -8,6 +8,7 @@ app.use('/public', express.static(__dirname + '/public'));
 app.set('views', './views');
 app.set('view engine', 'jade');
 
+app.use('/', front);
 app.use('/products/', products);
 
 app.listen(app.get('port'), function() {
