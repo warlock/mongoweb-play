@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var products = require('./router/front');
 var products = require('./router/products');
 
 app.set('port', (process.env.PORT || 5000));
